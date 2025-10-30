@@ -41,6 +41,9 @@ app.use("/api/auth", authRoutes);
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 // });
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
 
 // Error handler middleware
 app.use((err, req, res, next) => {
