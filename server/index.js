@@ -24,7 +24,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://peppy-mousse-b88e87.netlify.app/",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   })
@@ -54,6 +54,6 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log("Server listening on port 3000");
 });
