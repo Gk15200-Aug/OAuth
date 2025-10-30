@@ -39,7 +39,7 @@ const Profile = () => {
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/user/user/${currentUser._id}`);
+      const response = await axios.get(`http://localhost:3001/api/user/user/${currentUser._id}`);
       setFormData({
         ...formData,
         username: response.data.username,
@@ -128,7 +128,7 @@ const Profile = () => {
       }
 
       const res = await axios.post(
-        `http://localhost:3000/api/user/update/${currentUser._id}`,
+        `http://localhost:3001/api/user/update/${currentUser._id}`,
         updateData,
         {
           headers: {
@@ -168,7 +168,7 @@ const Profile = () => {
       const token = localStorage.getItem('access_token');
 
       const res = await axios.delete(
-        `http://localhost:3000/api/user/delete/${currentUser._id}`,
+        `http://localhost:3001/api/user/delete/${currentUser._id}`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -198,7 +198,7 @@ const Profile = () => {
       const confirmSignOut = window.confirm("Are you sure you want to sign out?");
       
       if (confirmSignOut) {
-        await fetch('http://localhost:3000/api/auth/signout', {
+        await fetch('http://localhost:3001/api/auth/signout', {
           method: 'GET',
           mode: 'cors',
           credentials: 'include', // Include credentials (cookies)
