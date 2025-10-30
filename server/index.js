@@ -24,7 +24,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://peppy-mousse-b88e87.netlify.app/",
+    origin: '*',
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   })
